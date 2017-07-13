@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans xmlns:b="http://www.springframework.org/schema/beans"
+         xmlns="http://www.springframework.org/schema/security"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <http pattern="/resources/css/**" security="none"/>
+    <http pattern="/resources/fonts/**" security="none"/>
+    <http pattern="/resources/images/**" security="none"/>
+    <http pattern="/resources/js/**" security="none"/>
+    <http pattern="/resources/upload/**" security="none"/>
+    <http>
+        <!--<intercept-url pattern="/**" access="ROLE_ADMIN"/>-->
+        <intercept-url pattern="/login" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        <intercept-url pattern="/index" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        <anonymous username="guest" granted-authority="ROLE_GUEST"/>
+        <form-login login-page="/login" default-target-url="/"
+                    authentication-failure-url="/login?error=true"/>
+        <logout logout-url="/logout" logout-success-url="/login"/>
+    </http>
+
+    <authentication-manager>
+        <authentication-provider ref="lianAuthProvider"/>
+    </authentication-manager>
+
+    <b:bean name="lianAuthProvider" class="com.sjlian.common.support.LianAuthProvider"/>
+</b:beans>
