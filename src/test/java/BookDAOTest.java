@@ -1,6 +1,6 @@
 import com.alibaba.fastjson.JSON;
-import com.sjlian.dao.BookDAO;
-import com.sjlian.model.Book;
+import com.spring.sjlian.dao.BookDAO;
+import com.spring.sjlian.model.Book;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

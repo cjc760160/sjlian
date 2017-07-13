@@ -41,7 +41,7 @@
         <!-- 配置MyBaties全局配置文件:mybatis-config.xml -->
         <property name="configLocation" value="classpath:mybatis/mybatis-config.xml" />
         <!-- 扫描entity包 使用别名 -->
-        <property name="typeAliasesPackage" value="com.sjlian.model" />
+        <property name="typeAliasesPackage" value="com.spring.sjlian.model" />
         <!-- 自动扫描mapping.xml文件 -->
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
     </bean>
@@ -51,6 +51,6 @@
         <!-- 注入sqlSessionFactory -->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
         <!-- 给出需要扫描Dao接口包 -->
-        <property name="basePackage" value="com.sjlian.dao" />
+        <property name="basePackage" value="com.spring.sjlian.dao" />
     </bean>
 </beans>

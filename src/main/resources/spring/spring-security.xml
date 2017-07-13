@@ -24,5 +24,5 @@
         <authentication-provider ref="lianAuthProvider"/>
     </authentication-manager>
 
-    <b:bean name="lianAuthProvider" class="com.sjlian.common.support.LianAuthProvider"/>
+    <b:bean name="lianAuthProvider" class="com.spring.sjlian.common.support.LianAuthProvider"/>
 </b:beans>
